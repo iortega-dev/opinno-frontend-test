@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { SearchService } from 'src/app/services/search-service';
+import { SearchService } from 'src/app/services/search.service';
 import { Subject } from 'rxjs';
 import { takeUntil, debounceTime, filter } from 'rxjs/operators';
 import { Film } from 'src/app/models/Film';
