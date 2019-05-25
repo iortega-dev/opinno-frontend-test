@@ -12,6 +12,7 @@ import { SearchResultItemComponent } from './components/search-result-item/searc
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { FilmDetailComponent } from './pages/film/film.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FilmDetailComponent } from './pages/film/film.component';
     SearchResultItemComponent,
     CarouselComponent,
     CarouselItemComponent,
-    FilmDetailComponent
+    FilmDetailComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
