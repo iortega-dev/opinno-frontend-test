@@ -1,0 +1,11 @@
+<div class="carouselbox" #carouselbox>
+  <div class="buttons">
+    <button class="prev btn-dark" (click)="navigate(-1)" [disabled]="loading">
+        <i class="fa fa-arrow-left"></i> <span class="offscreen"> Previous</span>
+    </button>
+    <button class="next btn-dark" (click)="navigate(+1)" [disabled]="loading">
+      <span class="offscreen">Next </span> <i class="fa fa-arrow-right"></i> 
+    </button>
+  </div>
+  <app-carousel-item *ngFor="let item of characters.slice(counter, counter+1)" [item]="item"></app-carousel-item>
+</div>
