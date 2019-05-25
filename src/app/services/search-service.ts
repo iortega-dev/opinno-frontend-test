@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SearchService {
 
-  baseUrl = 'https://swapi.co/api/films';
+  baseUrl = 'https://swapi.co/api/films/';
 
   constructor(private http: HttpClient) { }
 
