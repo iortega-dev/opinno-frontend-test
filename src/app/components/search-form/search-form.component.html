@@ -1,0 +1,8 @@
+<ng-container [formGroup]="searchForm">
+  <app-search-input
+      formControlName="search"
+      [placeholder]="'Search by title...'"
+      [loading]="showLoader"
+      [results]="searchResults"
+      ></app-search-input>
+</ng-container>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { Film } from 'src/app/models/Film';
 
 @Component({
   selector: 'app-search-input',
@@ -18,6 +19,7 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   @Input() label: string;
   @Input() placeholder: string;
   @Input() loading = false;
+  @Input() results: Film[];
 
   value: string;
   focused: boolean;
