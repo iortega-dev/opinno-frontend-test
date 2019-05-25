@@ -9,6 +9,8 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchResultItemComponent } from './components/search-result-item/search-result-item.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SearchResultItemComponent } from './components/search-result-item/searc
     HomepageComponent,
     SearchInputComponent,
     SearchFormComponent,
-    SearchResultItemComponent
+    SearchResultItemComponent,
+    CarouselComponent,
+    CarouselItemComponent
   ],
   imports: [
     BrowserModule,

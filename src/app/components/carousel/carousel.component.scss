@@ -1,0 +1,9 @@
+.buttons {
+    margin-bottom: 1em;
+    button {
+        width: 50%;
+        &:focus {
+            outline: none;
+        }
+    }
+}
