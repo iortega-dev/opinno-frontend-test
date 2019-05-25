@@ -17,4 +17,8 @@ export class SearchService {
 
     return this.http.get<any>(this.baseUrl, {params});
   }
+
+  getFilm(id): Observable<any> {
+    return this.http.get<any>(this.baseUrl + id + '/');
+  }
 }

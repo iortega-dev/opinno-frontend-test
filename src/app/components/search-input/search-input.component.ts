@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Film } from 'src/app/models/Film';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-input',
@@ -27,7 +28,7 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   onChange = (_: any) => {};
   onTouch = () => {};
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -61,5 +62,21 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   }
   setDisabledState?(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
+  }
+
+  gotoFilmDetails(film: Film) {
+    this.router.navigate(['/film', this.getFilmId(film)]).then(
+      null,
+      (error) => console.log('Error redirect film', error)
+    );
+  }
+
+  /**
+   * Returns the id of the movie from the URL property
+   * @param el Film element
+   */
+  getFilmId(el: Film) {
+    const filmUrl = el.url.split('/films/');
+    return filmUrl[1].slice(0, -1);
   }
 }
