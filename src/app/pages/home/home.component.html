@@ -8,7 +8,8 @@
       </div>
       <div class="jumbotron">
         <h1>Character's Carousel <small *ngIf="itemsLoaded">{{counter+1}}/{{count}}</small></h1>
-        <app-carousel *ngIf="itemsLoaded" [characters]="characters" [amount]="count" [loading]="loading" (outputCounter)="updateCounter($event)"></app-carousel>
+        <app-carousel *ngIf="itemsLoaded" [characters]="characters" [amount]="count" [loading]="loading"
+          (outputCounter)="updateCounter($event)"></app-carousel>
       </div>
     </div>
     <!-- Historical-->
@@ -17,4 +18,5 @@
         <h2>Recently Visited</h2>
       </div>
     </div>
+  </div>
 </div>

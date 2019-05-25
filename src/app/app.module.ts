@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchResultItemComponent } from './components/search-result-item/search-result-item.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
+import { FilmDetailComponent } from './pages/film/film.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CarouselItemComponent } from './components/carousel-item/carousel-item.
     SearchFormComponent,
     SearchResultItemComponent,
     CarouselComponent,
-    CarouselItemComponent
+    CarouselItemComponent,
+    FilmDetailComponent
   ],
   imports: [
     BrowserModule,
