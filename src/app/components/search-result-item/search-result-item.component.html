@@ -1,0 +1,23 @@
+<div class="result-item" *ngIf="item">
+  <div class="row no-gutters">
+    <div class="col-auto tag-col">
+      <span class="item-tag">
+          Ep. {{item.episode_id}}
+      </span>
+    </div>
+    <div class="col text-col">
+      <span>{{item.title}}</span>
+      <span>{{item.director}} - {{item.release_date.split('-', 1)}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="no-result-item" *ngIf="!item">
+  <div class="row no-gutters">
+    <div class="col">
+      <span>
+          No Results
+      </span>
+    </div>
+  </div>
+</div>
