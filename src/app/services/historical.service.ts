@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Record, RecordImpl } from '../models/Record';
+import { Record } from '../models/Record';
 
 @Injectable({
   providedIn: 'root'
@@ -28,16 +28,27 @@ export class HistoricalService {
    * @param record Record to save
    */
   addRecord(title, url) {
-      const record = new RecordImpl(title, url);
+      const record: Record = { title, url };
       if (Array.isArray(this.records) && this.records.length) {
-        if (this.records[this.records.length - 1].url !== record.url) {
+          this.removeRecord(record);
           this.records.push(record);
           localStorage.setItem('visit_records', JSON.stringify(this.records));
-        }
       } else {
         this.records.push(record);
         localStorage.setItem('visit_records', JSON.stringify(this.records));
       }
+  }
+
+  /**
+   * Removes the record coincidence from records
+   * @param rec Record to remove
+   */
+  removeRecord(rec: Record) {
+    this.records.forEach( (item, index) => {
+      if (rec.title === item.title && rec.url === item.url) {
+        this.records.splice(index, 1);
+      }
+    });
   }
 
 }

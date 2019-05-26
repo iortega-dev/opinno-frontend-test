@@ -20,19 +20,20 @@ export class AppComponent {
       // When navigation ends
       if (event instanceof NavigationEnd) {
         let routeTitle;
+        const navigation = this.router.getCurrentNavigation();
 
         /**
          *  IF movie link
          *  ELSE page link
          */
-        if (this.router.getCurrentNavigation().extras.state) {
-          routeTitle = this.router.getCurrentNavigation().extras.state.title;
+        if (navigation.extras.state) {
+          routeTitle = navigation.extras.state.title;
         } else if (this.activatedRoute.snapshot.firstChild.data.title) {
           routeTitle = this.activatedRoute.snapshot.firstChild.data.title;
         }
 
         // Set title if defined
-        if (routeTitle) {
+        if (routeTitle && routeTitle !== '¡Ups! 404') {
           this.historicalSrv.addRecord(routeTitle, event.urlAfterRedirects);
         }
       }
