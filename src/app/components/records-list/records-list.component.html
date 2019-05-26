@@ -1,5 +1,5 @@
 <ul class="list-group list-group-flush">
-  <li class="list-group-item list-group-item-action" *ngFor="let record of historical" [routerLink]="record.url" [state]="{title: record.title}">
-    <a>{{ record.title }}</a>
+  <li class="list-group-item list-group-item-action" *ngFor="let record of historical.reverse()">
+    <a [routerLink]="record.url" [state]="{title: record.title}">{{ record.title }}</a>
   </li>
 </ul>
