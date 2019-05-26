@@ -1,27 +1,24 @@
 # opinno-frontend-test
-Opinno Technical Test - FrontEnd Developer
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Development server
+Opinno Technical Test - FrontEnd Developer: Ignacio Ortega Mancera
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Este proyecto ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Code scaffolding
+Puedes visitar el proyecto alojado en -> [Firebase](https://opinnofrontendtest.firebaseapp.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ¿Por qué Angular?
+He elegido Angular para esta prueba porque es el framework al que más estoy acostumbrado, además, porque tiene consigo la mayor comunidad de desarrolladores de entre los frameworks más utilizados, gracias a esto, si alguna vez tienes un problema en el proyecto es más posible que alguien lo haya planteado anteriormente y resuelto. 
+
+Y por el uso de Typescript, que trae consigo mejoras que hacen que el código sea mas sencillo de leer y escribir, como el tipado de variables o la inyección de dependencias.
+
+## Primeros Pasos 
+
+Ejecuta `npm install` para instalar las dependencias del proyecto. 
+
+## Servidor de desarrollo
+
+Ejecuta `npm start` para iniciar el servidor de desarrollo. Abre en el navegador `http://localhost:4200/`. La aplicación se recargará automaticamente si modificas algún archivo de fuentes.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Ejecuta `ng build` para construir el proyecto. El proyecto compilado se almacenará en el directorio `dist/`. 
