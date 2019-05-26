@@ -22,6 +22,7 @@ export class SearchFormComponent implements OnInit {
     private searchSrv: SearchService
   ) {}
 
+  // Initializes form group and form listener
   ngOnInit() {
     this.searchForm = this.fb.group({
       search: ['']
@@ -29,6 +30,9 @@ export class SearchFormComponent implements OnInit {
     this.initFormListener();
   }
 
+  /**
+   * Subscribe to search FormControl changes, with debounce time for seach when >= 2 characters typed
+   */
   initFormListener() {
     this.searchForm
       .get('search')
@@ -41,6 +45,10 @@ export class SearchFormComponent implements OnInit {
       });
   }
 
+  /**
+   * Launch seach query, meanwhile shows load spinner and turn it off when ends
+   * @param searchterm Term of search
+   */
   doSearch(searchterm) {
     this.showLoader = true;
     this.searchSrv.getSearchResults(searchterm).subscribe(

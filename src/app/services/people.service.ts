@@ -11,6 +11,10 @@ export class PeopleService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Service returns People collection by page
+   * @param page Query page to show
+   */
   getPeopleResults(page: number): Observable<any> {
     const params = new HttpParams()
       .set('page', page.toString());

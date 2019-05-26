@@ -16,18 +16,24 @@ export class CarouselComponent {
 
   constructor() { }
 
+  /**
+   * Navigate function for carousel
+   * @param direction -1 for previous, 1 for next
+   */
   navigate(direction) {
     // calculate th new position
     this.counter = this.counter + direction;
 
+    // If the first item and previous, go to the last item
     if (direction === -1 && this.counter < 0) {
       this.counter = this.characters.length - 1;
     }
 
+    // If the last item and next, go to the first item
     if (direction === 1 && this.counter === this.characters.length) {
       this.counter = 0;
     }
-
+    // Output counter position to parent
     this.outputCounter.emit(this.counter);
   }
 

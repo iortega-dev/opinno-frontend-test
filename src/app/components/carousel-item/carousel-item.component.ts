@@ -28,7 +28,7 @@ export class CarouselItemComponent implements OnInit, AfterViewInit {
       this.getSpecie(s);
     });
   }
-
+  // Set component loaded flag true to show content
   ngAfterViewInit() {
     this.componentLoaded = true;
   }

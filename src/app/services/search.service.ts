@@ -11,13 +11,20 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Service returns search results by searchterm
+   * @param searchterm term of search
+   */
   getSearchResults(searchterm: string): Observable<any> {
     const params = new HttpParams()
       .set('search', searchterm);
 
     return this.http.get<any>(this.baseUrl, {params});
   }
-
+  /**
+   * Service returns single film by id
+   * @param id Film id
+   */
   getFilm(id): Observable<any> {
     return this.http.get<any>(this.baseUrl + id + '/');
   }

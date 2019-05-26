@@ -15,7 +15,7 @@ export class AppComponent {
 
     // Retrieves historical first time
     this.historicalSrv.getHistorical();
-
+    // Subscription to router events
     this.router.events.subscribe((event: Event) => {
       // When navigation ends
       if (event instanceof NavigationEnd) {

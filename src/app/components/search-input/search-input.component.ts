@@ -64,6 +64,10 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
     this.isDisabled = isDisabled;
   }
 
+  /**
+   * Film redirection method with title param in state
+   * @param film Film to redirect
+   */
   gotoFilmDetails(film: Film) {
     this.router.navigate(['/film', this.getFilmId(film)], { state: { title: film.title}}).then(
       null,

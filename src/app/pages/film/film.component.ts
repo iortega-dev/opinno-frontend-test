@@ -41,6 +41,11 @@ export class FilmDetailComponent implements OnInit, OnDestroy {
     this.sub.unsubscribe();
   }
 
+  /**
+   * Loads film data based on its ID
+   * It sets the film title and search for species and plantes references
+   * @param id Id of the film
+   */
   loadFilmData(id) {
     // If not a number or undefined
     if (isNaN(id) || !id) {
