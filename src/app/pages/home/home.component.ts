@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PeopleService } from 'src/app/services/people.service';
 import { People } from 'src/app/models/People';
 import { map } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,9 @@ export class HomepageComponent implements OnInit {
   previousUrl: string;
   count: number;
 
-  constructor(private peopleSrv: PeopleService) { }
+  constructor(private peopleSrv: PeopleService, private titleSrv: Title) {
+    this.titleSrv.setTitle('Homepage');
+  }
 
   ngOnInit() {
     this.loadPeople().subscribe(

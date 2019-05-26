@@ -6,6 +6,7 @@ import { Observable, Subscription } from 'rxjs';
 import { Specie } from 'src/app/models/Specie';
 import { SpeciesService } from 'src/app/services/species.service';
 import { PlanetsService } from 'src/app/services/planet.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-film-detail',
@@ -26,7 +27,8 @@ export class FilmDetailComponent implements OnInit, OnDestroy {
   constructor(private searchSrv: SearchService,
               private speciesSrv: SpeciesService,
               private planetsSrv: PlanetsService,
-              private route: ActivatedRoute) { }
+              private titleSrv: Title,
+              private route: ActivatedRoute) { this.titleSrv.setTitle('Film'); }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -48,6 +50,7 @@ export class FilmDetailComponent implements OnInit, OnDestroy {
         (data) => {
           this.film = data;
           this.title = this.film.title;
+          this.titleSrv.setTitle('Film — ' + this.title);
           this.film.species.forEach(s => {
             this.getSpecie(s);
           });

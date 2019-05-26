@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pagenotfound',
@@ -9,7 +10,9 @@ export class PagenotfoundComponent implements OnInit {
 
   mouseOvered = false;
 
-  constructor() { }
+  constructor(private titleSrv: Title) {
+    this.titleSrv.setTitle('¡Ups! 404');
+  }
 
   ngOnInit() {
   }
