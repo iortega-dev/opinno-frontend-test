@@ -31,13 +31,13 @@
             <th scope="row">Eye Color</th>
             <td>{{item.eye_color | titlecase}} </td>
         </tr>
-        <tr *ngIf="speciesArray.length">
+        <tr>
             <th scope="row">Specie</th>
-            <td>{{speciesArray.join(', ')}}</td>
+            <td>{{speciesArray.length ? speciesArray.join(', ') : ''}}</td>
         </tr>
-        <tr *ngIf="item.homeworld && planet">
+        <tr *ngIf="item.homeworld">
             <th scope="row">Homeworld</th>
-            <td>{{ item.homeworld ? planet.name : '' }}</td>
+            <td>{{ item.homeworld && planet ? planet.name : '' }}</td>
         </tr>
     </tbody>
 </table>
