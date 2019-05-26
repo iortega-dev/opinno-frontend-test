@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row align-items-center">
+    <!-- Content  -->
+    <div class="col-md-12 my-0 my-sm-5 align-content-center align-items-center d-flex flex-column">
+        <h1 class="my-4">Ocurred, a 404 error has...</h1>
+        <img class="img-fluid" src="assets/img/404.png" alt="404">
+        <h2 class="my-4">Back to the homepage you should go. Yes, hrrrm.</h2>
+        <div class="divider line glow" [class.w-auto]="!mouseOvered" [class.w-50]="mouseOvered" (mouseover)="mouseOvered=true" (mouseout)="mouseOvered=false">
+          <a [routerLink]="['/']" class="btn btn-lg btn-success d-block d-sm-inline">HOME</a>
+        </div>
+    </div>
+  </div>
+</div>

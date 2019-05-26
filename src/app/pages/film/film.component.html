@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <!-- Content  -->
+    <div class="col-md-8 mt-4 mb-0">
+      <div class="jumbotron shadow">
+        <h1 class="text-center">{{ title }}</h1>
+      </div>
+      <ng-container *ngIf="dataLoaded">
+        <!--Opening Crawl-->
+        <div class="card my-4">
+          <div class="card-header">
+            Opening Crawl
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{film.opening_crawl}}</p>
+          </div>
+        </div>
+        <!--Technical data-->
+        <div class="card my-4">
+          <div class="card-header">
+            Technical Data
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Release Date: {{film.release_date | date}}</li>
+              <li class="list-group-item">Director: {{film.director}}</li>
+              <li class="list-group-item">Producer: {{film.producer}}</li>
+            </ul>
+          </div>
+        </div>
+        <!--Species-->
+        <div class="card my-4" *ngIf="speciesArray.length">
+          <div class="card-header">
+            Species
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-horizontal d-flex flex-wrap">
+              <li class="list-group-item" *ngFor="let sp of speciesArray">{{sp}}</li>
+            </ul>
+          </div>
+        </div>
+        <!--Planets-->
+        <div class="card my-0 my-sm-4" *ngIf="planetsArray.length">
+          <div class="card-header">
+            Planets
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-horizontal d-flex flex-wrap">
+              <li class="list-group-item" *ngFor="let p of planetsArray">{{p}}</li>
+            </ul>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+    <!-- Historical-->
+    <div class="col-md-4 my-4">
+      <!--Poster-->
+      <div class="card mb-4" *ngIf="dataLoaded">
+        <div class="card-header">
+          Poster
+        </div>
+        <div class="card-body align-self-center">
+          <img class="img-fluid" [src]="'assets/img/movies/'+ id +'.jpg'" alt="{{title}}">
+        </div>
+      </div>
+      <div class="jumbotron bg-transparent p-4">
+        <h2>Recently Visited</h2>
+        <app-records-list></app-records-list>
+      </div>
+    </div>
+  </div>
+</div>
