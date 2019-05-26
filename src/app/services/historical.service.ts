@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Record, RecordImpl } from '../models/Record';
+import { Record } from '../models/Record';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class HistoricalService {
    * @param record Record to save
    */
   addRecord(title, url) {
-      const record = new RecordImpl(title, url);
+      const record: Record = { title, url };
       if (Array.isArray(this.records) && this.records.length) {
         if (this.records[this.records.length - 1].url !== record.url) {
           this.records.push(record);
