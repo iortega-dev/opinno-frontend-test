@@ -1,9 +1,9 @@
 <div class="carouselbox" #carouselbox>
   <div class="buttons">
-    <button class="prev btn-dark" (click)="navigate(-1)" [disabled]="loading">
+    <button class="prev btn-dark" (click)="navigate(-1)" [disabled]="loading || counter == 0">
         <i class="fa fa-arrow-left"></i> <span class="offscreen"> Previous</span>
     </button>
-    <button class="next btn-dark" (click)="navigate(+1)" [disabled]="loading">
+    <button class="next btn-dark" (click)="navigate(+1)" [disabled]="loading || counter == amount -1">
       <span class="offscreen">Next </span> <i class="fa fa-arrow-right"></i> 
     </button>
   </div>
