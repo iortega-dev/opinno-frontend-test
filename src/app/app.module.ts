@@ -13,6 +13,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselItemComponent } from './components/carousel-item/carousel-item.component';
 import { FilmDetailComponent } from './pages/film/film.component';
 import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { RecordsListComponent } from './components/records-list/records-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.compone
     CarouselComponent,
     CarouselItemComponent,
     FilmDetailComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    RecordsListComponent
   ],
   imports: [
     BrowserModule,

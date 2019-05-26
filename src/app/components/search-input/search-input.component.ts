@@ -65,7 +65,7 @@ export class SearchInputComponent implements OnInit, ControlValueAccessor {
   }
 
   gotoFilmDetails(film: Film) {
-    this.router.navigate(['/film', this.getFilmId(film)]).then(
+    this.router.navigate(['/film', this.getFilmId(film)], { state: { title: film.title}}).then(
       null,
       (error) => console.log('Error redirect film', error)
     );
