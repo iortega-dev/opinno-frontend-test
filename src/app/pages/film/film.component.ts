@@ -17,7 +17,7 @@ export class FilmDetailComponent implements OnInit, OnDestroy {
   id: number;
   film: Film;
   sub: Subscription;
-  title = '—————————';
+  title = '—————';
   dataLoaded = false;
 
   speciesArray: string[] = [];
